@@ -76,7 +76,7 @@ export class ImageUpload {
 		// listen callback
 		xhr.onload = () => {
 			if (xhr.status === 200) {
-				callbackOK(JSON.parse(xhr.responseText), this.insert.bind(this));
+				callbackOK(JSON.parse(xhr.getResponseHeader('Location')), this.insert.bind(this));
 			} else {
 				callbackKO({
 					code: xhr.status,
