@@ -62,7 +62,8 @@ export class ImageUpload {
 			callbackOK = this.options.callbackOK || this.uploadImageCallbackOK.bind(this),
 			callbackKO = this.options.callbackKO || this.uploadImageCallbackKO.bind(this),
 			fd = new FormData();
-		fd.append('image', file);
+		fd.append('file', file);
+		fd.append('folder', 'images');
 
 		const xhr = new XMLHttpRequest();
 		// init http query
