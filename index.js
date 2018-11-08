@@ -80,6 +80,8 @@ export class ImageUpload {
 			} else {
 				callbackKO({
 					code: xhr.status,
+					response: xhr.response,
+					responseLocation: xhr.getResponseHeader('Location'),
 					type: xhr.statusText,
 					body: xhr.responseText
 				});
